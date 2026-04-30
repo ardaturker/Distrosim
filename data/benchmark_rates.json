@@ -1,0 +1,614 @@
+{
+  "_meta": {
+    "description": "Industry benchmark freight/logistics rates for supply chain simulation. Used as fallback when live APIs are unavailable. All monetary values in USD unless noted.",
+    "sources": [
+      "Freightos Baltic Index Q1 2024",
+      "Drewry World Container Index 2024",
+      "IATA Air Freight Market Report 2024",
+      "World Bank Logistics Performance Index 2023",
+      "CBRE European Industrial & Logistics Outlook Q4 2023",
+      "Descartes/CustomsCity trade data 2024"
+    ],
+    "last_updated": "2024-Q1",
+    "note": "Rates reflect post-2022 normalized market. Apply seasonal multipliers for Red Sea disruption periods (+15-30% ocean)."
+  },
+  "ocean_fcl": {
+    "CHN-DNK": {
+      "20ft_usd_per_teu": { "avg": 2800, "min": 2100, "max": 4500, "std": 480, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3600, "min": 2700, "max": 5800, "std": 600, "unit": "USD/TEU" },
+      "transit_days": { "avg": 30, "min": 26, "max": 38, "std": 3 },
+      "via": "Shanghai/Shenzhen → Aarhus/Copenhagen",
+      "source": "Freightos Baltic Index / Drewry WCI",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-DEU": {
+      "20ft_usd_per_teu": { "avg": 2650, "min": 2000, "max": 4200, "std": 450, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3400, "min": 2600, "max": 5500, "std": 570, "unit": "USD/TEU" },
+      "transit_days": { "avg": 28, "min": 24, "max": 36, "std": 3 },
+      "via": "Shanghai → Hamburg",
+      "source": "Freightos Baltic Index",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-NLD": {
+      "20ft_usd_per_teu": { "avg": 2600, "min": 1950, "max": 4150, "std": 440, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3350, "min": 2550, "max": 5400, "std": 560, "unit": "USD/TEU" },
+      "transit_days": { "avg": 27, "min": 23, "max": 35, "std": 3 },
+      "via": "Shanghai → Rotterdam (direct call)",
+      "source": "Freightos Baltic Index — CHN/NLD lane",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-SWE": {
+      "20ft_usd_per_teu": { "avg": 2750, "min": 2050, "max": 4350, "std": 470, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3500, "min": 2650, "max": 5600, "std": 580, "unit": "USD/TEU" },
+      "transit_days": { "avg": 30, "min": 26, "max": 38, "std": 3 },
+      "via": "Shanghai → Rotterdam → Gothenburg (feeder/road)",
+      "source": "Freightos Baltic Index — CHN/SWE lane estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-GBR": {
+      "20ft_usd_per_teu": { "avg": 2650, "min": 2000, "max": 4200, "std": 450, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3400, "min": 2600, "max": 5500, "std": 570, "unit": "USD/TEU" },
+      "transit_days": { "avg": 28, "min": 24, "max": 36, "std": 3 },
+      "via": "Shanghai → Felixstowe (direct call)",
+      "source": "Freightos Baltic Index — CHN/UK lane",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-TUR": {
+      "20ft_usd_per_teu": { "avg": 2250, "min": 1700, "max": 3600, "std": 380, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 2900, "min": 2200, "max": 4700, "std": 490, "unit": "USD/TEU" },
+      "transit_days": { "avg": 24, "min": 20, "max": 30, "std": 2.5 },
+      "via": "Shanghai → Ambarlı/Kumport (Istanbul)",
+      "source": "Freightos Baltic Index — CHN/TUR lane",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-POL": {
+      "20ft_usd_per_teu": { "avg": 2800, "min": 2100, "max": 4500, "std": 480, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3600, "min": 2700, "max": 5800, "std": 600, "unit": "USD/TEU" },
+      "transit_days": { "avg": 30, "min": 26, "max": 38, "std": 3 },
+      "via": "Shanghai → Gdańsk DCT (direct call)",
+      "source": "Freightos Baltic Index — CHN/POL lane estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-BEL": {
+      "20ft_usd_per_teu": { "avg": 2600, "min": 1950, "max": 4150, "std": 440, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 3350, "min": 2550, "max": 5400, "std": 560, "unit": "USD/TEU" },
+      "transit_days": { "avg": 27, "min": 23, "max": 35, "std": 3 },
+      "via": "Shanghai → Antwerp (direct call)",
+      "source": "Freightos Baltic Index — CHN/BEL lane",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-USA": {
+      "20ft_usd_per_teu": { "avg": 2200, "min": 1600, "max": 3800, "std": 400, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 2900, "min": 2100, "max": 5000, "std": 520, "unit": "USD/TEU" },
+      "transit_days": { "avg": 22, "min": 18, "max": 28, "std": 2.5 },
+      "via": "Shanghai → Los Angeles",
+      "source": "Freightos Baltic Index",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "DEU-DNK": {
+      "20ft_usd_per_teu": { "avg": 450, "min": 320, "max": 650, "std": 80, "unit": "USD/TEU" },
+      "40ft_usd_per_teu": { "avg": 620, "min": 440, "max": 900, "std": 110, "unit": "USD/TEU" },
+      "transit_days": { "avg": 3, "min": 2, "max": 5, "std": 0.8 },
+      "via": "Hamburg → Copenhagen",
+      "source": "Short-sea shipping benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "ocean_lcl": {
+    "CHN-DNK": {
+      "usd_per_cbm": { "avg": 115, "min": 80, "max": 165, "std": 22, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 40, "min": 34, "max": 50, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 180, "min": 120, "max": 280, "std": 45 },
+      "via": "Shanghai/Shenzhen → Aarhus/Copenhagen (consolidation)",
+      "source": "SeaRates / Freightos LCL benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-DEU": {
+      "usd_per_cbm": { "avg": 105, "min": 75, "max": 155, "std": 20, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 38, "min": 32, "max": 46, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 160, "min": 110, "max": 250, "std": 40 },
+      "source": "SeaRates benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-NLD": {
+      "usd_per_cbm": { "avg": 103, "min": 72, "max": 152, "std": 20, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 37, "min": 31, "max": 45, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 155, "min": 108, "max": 245, "std": 38 },
+      "source": "SeaRates / Freightos LCL benchmarks — CHN/NLD",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-SWE": {
+      "usd_per_cbm": { "avg": 118, "min": 82, "max": 170, "std": 23, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 42, "min": 35, "max": 52, "std": 4.5 },
+      "surcharges_usd_per_shipment": { "avg": 185, "min": 125, "max": 290, "std": 47 },
+      "source": "SeaRates benchmarks — CHN/SWE estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-GBR": {
+      "usd_per_cbm": { "avg": 105, "min": 74, "max": 156, "std": 20, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 37, "min": 31, "max": 45, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 165, "min": 115, "max": 260, "std": 42 },
+      "source": "SeaRates / Freightos LCL benchmarks — CHN/UK",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-TUR": {
+      "usd_per_cbm": { "avg": 92, "min": 65, "max": 138, "std": 18, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 33, "min": 27, "max": 41, "std": 3.5 },
+      "surcharges_usd_per_shipment": { "avg": 145, "min": 95, "max": 225, "std": 36 },
+      "source": "SeaRates benchmarks — CHN/TUR lane",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-POL": {
+      "usd_per_cbm": { "avg": 115, "min": 80, "max": 165, "std": 22, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 40, "min": 34, "max": 50, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 180, "min": 120, "max": 280, "std": 45 },
+      "source": "SeaRates benchmarks — CHN/POL estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-BEL": {
+      "usd_per_cbm": { "avg": 103, "min": 72, "max": 152, "std": 20, "unit": "USD/CBM" },
+      "min_cbm": 1.0,
+      "transit_days": { "avg": 37, "min": 31, "max": 45, "std": 4 },
+      "surcharges_usd_per_shipment": { "avg": 155, "min": 108, "max": 245, "std": 38 },
+      "source": "SeaRates / Freightos LCL benchmarks — CHN/BEL",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "air_freight": {
+    "CHN-DNK": {
+      "usd_per_kg": { "avg": 5.80, "min": 3.80, "max": 9.50, "std": 1.20, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 6, "min": 4, "max": 10, "std": 1.5 },
+      "min_charge_usd": { "avg": 95, "min": 60, "max": 140, "std": 25 },
+      "via": "PVG/SZX → CPH",
+      "source": "IATA Air Freight Market Analysis 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-DEU": {
+      "usd_per_kg": { "avg": 5.20, "min": 3.40, "max": 8.80, "std": 1.10, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 85, "min": 55, "max": 130, "std": 22 },
+      "via": "PVG/SZX → FRA",
+      "source": "IATA Air Freight Market Analysis 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-NLD": {
+      "usd_per_kg": { "avg": 5.30, "min": 3.50, "max": 8.90, "std": 1.10, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 88, "min": 58, "max": 135, "std": 23 },
+      "via": "PVG → AMS",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/NLD",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-SWE": {
+      "usd_per_kg": { "avg": 5.50, "min": 3.60, "max": 9.20, "std": 1.15, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 90, "min": 60, "max": 138, "std": 24 },
+      "via": "PVG → GOT",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/SWE estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-GBR": {
+      "usd_per_kg": { "avg": 5.20, "min": 3.40, "max": 8.80, "std": 1.10, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 88, "min": 58, "max": 135, "std": 23 },
+      "via": "PVG → LHR",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/UK",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-TUR": {
+      "usd_per_kg": { "avg": 4.80, "min": 3.10, "max": 8.20, "std": 1.00, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 4, "min": 2, "max": 7, "std": 1.0 },
+      "min_charge_usd": { "avg": 80, "min": 50, "max": 125, "std": 20 },
+      "via": "PVG → IST",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/TUR",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-POL": {
+      "usd_per_kg": { "avg": 5.60, "min": 3.70, "max": 9.40, "std": 1.18, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 92, "min": 60, "max": 140, "std": 24 },
+      "via": "PVG → GDN (via WAW or FRA)",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/POL estimate",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-BEL": {
+      "usd_per_kg": { "avg": 5.20, "min": 3.40, "max": 8.80, "std": 1.10, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 86, "min": 57, "max": 132, "std": 22 },
+      "via": "PVG → BRU",
+      "source": "IATA Air Freight Market Analysis 2024 — CHN/BEL",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "CHN-USA": {
+      "usd_per_kg": { "avg": 4.80, "min": 3.20, "max": 8.20, "std": 1.00, "unit": "USD/kg" },
+      "volumetric_factor": 6000,
+      "transit_days": { "avg": 5, "min": 3, "max": 8, "std": 1.2 },
+      "min_charge_usd": { "avg": 80, "min": 50, "max": 120, "std": 20 },
+      "via": "PVG/SZX → LAX/JFK",
+      "source": "IATA Air Freight Market Analysis 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "origin_inland_transport": {
+    "CHN": {
+      "usd_per_container_to_port": {
+        "local_0_50km": { "avg": 180, "min": 120, "max": 280, "std": 45, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 380, "min": 260, "max": 560, "std": 85, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 750, "min": 500, "max": 1100, "std": 160, "unit": "USD/container" }
+      },
+      "usd_per_kg_air_to_airport": { "avg": 0.18, "min": 0.10, "max": 0.32, "std": 0.05, "unit": "USD/kg" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.8 },
+      "source": "Chinese domestic freight benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "destination_inland_transport": {
+    "DNK": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 320, "min": 220, "max": 480, "std": 65, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 580, "min": 400, "max": 820, "std": 110, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 950, "min": 680, "max": 1350, "std": 175, "unit": "USD/container" }
+      },
+      "usd_per_kg_air_from_airport": { "avg": 0.28, "min": 0.18, "max": 0.45, "std": 0.07, "unit": "USD/kg" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Danish logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "DEU": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 280, "min": 190, "max": 420, "std": 58, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 520, "min": 360, "max": 740, "std": 96, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 880, "min": 620, "max": 1240, "std": 160, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "German logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "NLD": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 260, "min": 175, "max": 390, "std": 54, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 480, "min": 330, "max": 680, "std": 88, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 820, "min": 580, "max": 1160, "std": 148, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Dutch logistics market benchmarks (Netherlands)",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "SWE": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 300, "min": 205, "max": 450, "std": 62, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 560, "min": 390, "max": 790, "std": 103, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 920, "min": 650, "max": 1300, "std": 168, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Swedish logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "GBR": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 340, "min": 235, "max": 510, "std": 70, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 620, "min": 430, "max": 880, "std": 114, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 1020, "min": 720, "max": 1450, "std": 186, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "UK road haulage benchmarks (post-Brexit)",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "TUR": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 180, "min": 120, "max": 270, "std": 37, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 340, "min": 230, "max": 490, "std": 64, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 620, "min": 430, "max": 880, "std": 114, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.5 },
+      "source": "Turkish logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "POL": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 220, "min": 150, "max": 330, "std": 45, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 400, "min": 275, "max": 570, "std": 74, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 700, "min": 490, "max": 990, "std": 128, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Polish logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "BEL": {
+      "usd_per_container_from_port": {
+        "local_0_50km": { "avg": 260, "min": 175, "max": 390, "std": 54, "unit": "USD/container" },
+        "regional_50_200km": { "avg": 480, "min": 330, "max": 680, "std": 88, "unit": "USD/container" },
+        "national_200km_plus": { "avg": 820, "min": 580, "max": 1160, "std": 148, "unit": "USD/container" }
+      },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Belgian logistics market benchmarks",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "thc": {
+    "CHN_origin": {
+      "usd_per_teu": { "avg": 195, "min": 150, "max": 260, "std": 32, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Shanghai/Shenzhen port tariff schedules 2024",
+      "source_date": "2024-Q1",
+      "confidence": "high"
+    },
+    "DNK_destination": {
+      "usd_per_teu": { "avg": 340, "min": 280, "max": 440, "std": 48, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Aarhus / Copenhagen tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "high"
+    },
+    "DEU_destination": {
+      "usd_per_teu": { "avg": 310, "min": 250, "max": 400, "std": 44, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Hamburg tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "high"
+    },
+    "NLD_destination": {
+      "usd_per_teu": { "avg": 320, "min": 260, "max": 415, "std": 46, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Rotterdam tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "high"
+    },
+    "SWE_destination": {
+      "usd_per_teu": { "avg": 330, "min": 265, "max": 425, "std": 48, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Gothenburg tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "GBR_destination": {
+      "usd_per_teu": { "avg": 360, "min": 290, "max": 465, "std": 52, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Felixstowe tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "TUR_destination": {
+      "usd_per_teu": { "avg": 280, "min": 225, "max": 365, "std": 40, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Istanbul (Ambarlı) tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "POL_destination": {
+      "usd_per_teu": { "avg": 310, "min": 248, "max": 400, "std": 44, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "DCT Gdańsk port tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "BEL_destination": {
+      "usd_per_teu": { "avg": 320, "min": 258, "max": 415, "std": 46, "unit": "USD/TEU" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.3 },
+      "source": "Port of Antwerp tariff 2024",
+      "source_date": "2024-Q1",
+      "confidence": "high"
+    }
+  },
+  "customs_export": {
+    "CHN": {
+      "broker_fee_usd": { "avg": 130, "min": 80, "max": 200, "std": 35, "unit": "USD/shipment" },
+      "days": { "avg": 1, "min": 1, "max": 2, "std": 0.4 },
+      "source": "Chinese customs broker market rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "customs_import_broker": {
+    "DNK": {
+      "broker_fee_usd": { "avg": 310, "min": 220, "max": 450, "std": 68, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 85, "min": 60, "max": 130, "std": 22, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 5, "std": 1.0 },
+      "source": "Danish customs broker association rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "DEU": {
+      "broker_fee_usd": { "avg": 285, "min": 200, "max": 420, "std": 62, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 75, "min": 52, "max": 115, "std": 19, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.9 },
+      "source": "German customs broker association rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "NLD": {
+      "broker_fee_usd": { "avg": 270, "min": 190, "max": 400, "std": 58, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 70, "min": 48, "max": 108, "std": 18, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.9 },
+      "source": "Dutch customs broker association rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "SWE": {
+      "broker_fee_usd": { "avg": 300, "min": 215, "max": 440, "std": 66, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 80, "min": 56, "max": 122, "std": 20, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.9 },
+      "source": "Swedish customs broker market rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "GBR": {
+      "broker_fee_usd": { "avg": 350, "min": 250, "max": 520, "std": 76, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 95, "min": 66, "max": 145, "std": 24, "unit": "USD/shipment" },
+      "days": { "avg": 3, "min": 1, "max": 6, "std": 1.2 },
+      "source": "UK customs broker rates post-Brexit 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "TUR": {
+      "broker_fee_usd": { "avg": 250, "min": 175, "max": 370, "std": 54, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 65, "min": 44, "max": 98, "std": 16, "unit": "USD/shipment" },
+      "days": { "avg": 3, "min": 2, "max": 7, "std": 1.5 },
+      "source": "Turkish customs broker market rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "POL": {
+      "broker_fee_usd": { "avg": 240, "min": 168, "max": 355, "std": 52, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 62, "min": 42, "max": 94, "std": 15, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.9 },
+      "source": "Polish customs broker market rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    },
+    "BEL": {
+      "broker_fee_usd": { "avg": 270, "min": 190, "max": 400, "std": 58, "unit": "USD/shipment" },
+      "handling_fee_usd": { "avg": 70, "min": 48, "max": 108, "std": 18, "unit": "USD/shipment" },
+      "days": { "avg": 2, "min": 1, "max": 4, "std": 0.9 },
+      "source": "Belgian customs broker association rates 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  },
+  "import_duties_fallback": {
+    "EU_MFN_chapter90": {
+      "rate_percent": { "avg": 1.7, "min": 0.0, "max": 3.7, "std": 0.8 },
+      "note": "EU MFN rate for HS Chapter 90 (optical/measuring instruments). Use WTO API for exact rate by HS code.",
+      "source": "EU TARIC 2024",
+      "source_date": "2024",
+      "confidence": "medium"
+    },
+    "EU_VAT_DNK": {
+      "rate_percent": 25.0,
+      "source": "Danish Tax Agency (SKAT) 2024",
+      "confidence": "high"
+    },
+    "EU_VAT_DEU": {
+      "rate_percent": 19.0,
+      "source": "German Bundeszentralamt für Steuern 2024",
+      "confidence": "high"
+    },
+    "EU_VAT_NLD": {
+      "rate_percent": 21.0,
+      "source": "Dutch Belastingdienst 2024",
+      "confidence": "high"
+    },
+    "EU_VAT_SWE": {
+      "rate_percent": 25.0,
+      "source": "Swedish Skatteverket 2024",
+      "confidence": "high"
+    },
+    "EU_VAT_POL": {
+      "rate_percent": 23.0,
+      "source": "Polish Ministry of Finance 2024",
+      "confidence": "high"
+    },
+    "EU_VAT_BEL": {
+      "rate_percent": 21.0,
+      "source": "Belgian FOD Financiën 2024",
+      "confidence": "high"
+    },
+    "GBR_VAT": {
+      "rate_percent": 20.0,
+      "source": "HMRC UK VAT 2024",
+      "confidence": "high"
+    },
+    "TUR_VAT": {
+      "rate_percent": 18.0,
+      "source": "Turkish Revenue Administration (GİB) 2024",
+      "confidence": "high"
+    },
+    "USA_MFN_chapter90": {
+      "rate_percent": { "avg": 0.0, "min": 0.0, "max": 4.5, "std": 1.2 },
+      "note": "US MFN rate varies; many chapter 90 goods are duty-free. China tariff Section 301 may add +7.5-25%.",
+      "source": "USITC HTS 2024",
+      "source_date": "2024",
+      "confidence": "medium"
+    }
+  },
+  "last_mile_b2b": {
+    "DNK": { "avg": 92.0, "min": 65.0, "max": 135.0, "unit": "USD/pallet", "source": "Danish logistics market benchmark 2024" },
+    "DEU": { "avg": 85.0, "min": 60.0, "max": 125.0, "unit": "USD/pallet", "source": "German logistics market benchmark 2024" },
+    "NLD": { "avg": 82.0, "min": 58.0, "max": 120.0, "unit": "USD/pallet", "source": "Dutch logistics market benchmark 2024" },
+    "SWE": { "avg": 90.0, "min": 63.0, "max": 132.0, "unit": "USD/pallet", "source": "Swedish logistics market benchmark 2024" },
+    "GBR": { "avg": 98.0, "min": 70.0, "max": 145.0, "unit": "USD/pallet", "source": "UK road haulage benchmark 2024" },
+    "TUR": { "avg": 55.0, "min": 38.0, "max": 82.0,  "unit": "USD/pallet", "source": "Turkish logistics market benchmark 2024" },
+    "POL": { "avg": 62.0, "min": 43.0, "max": 92.0,  "unit": "USD/pallet", "source": "Polish logistics market benchmark 2024" },
+    "BEL": { "avg": 82.0, "min": 58.0, "max": 120.0, "unit": "USD/pallet", "source": "Belgian logistics market benchmark 2024" }
+  },
+  "last_mile_b2c": {
+    "DNK": { "avg": 9.50, "min": 6.50, "max": 14.50, "unit": "USD/parcel", "source": "Danish carrier benchmark 2024 (PostNord/GLS/DAO)" },
+    "DEU": { "avg": 8.50, "min": 5.80, "max": 13.00, "unit": "USD/parcel", "source": "German carrier benchmark 2024 (DHL/DPD/Hermes)" },
+    "NLD": { "avg": 8.20, "min": 5.60, "max": 12.50, "unit": "USD/parcel", "source": "Dutch carrier benchmark 2024 (PostNL/DHL)" },
+    "SWE": { "avg": 9.00, "min": 6.20, "max": 13.80, "unit": "USD/parcel", "source": "Swedish carrier benchmark 2024 (PostNord/DHL)" },
+    "GBR": { "avg": 10.50, "min": 7.20, "max": 16.00, "unit": "USD/parcel", "source": "UK carrier benchmark 2024 (Royal Mail/DPD/Evri)" },
+    "TUR": { "avg": 5.80, "min": 3.90, "max": 8.80,  "unit": "USD/parcel", "source": "Turkish carrier benchmark 2024 (Yurtiçi/MNG)" },
+    "POL": { "avg": 6.50, "min": 4.40, "max": 9.80,  "unit": "USD/parcel", "source": "Polish carrier benchmark 2024 (InPost/DPD)" },
+    "BEL": { "avg": 8.50, "min": 5.80, "max": 13.00, "unit": "USD/parcel", "source": "Belgian carrier benchmark 2024 (bpost/DPD)" }
+  },
+  "freight_insurance": {
+    "standard": {
+      "rate_percent_of_cif": { "avg": 0.25, "min": 0.10, "max": 0.50, "std": 0.08 },
+      "source": "Marine cargo insurance market standard",
+      "source_date": "2024",
+      "confidence": "high"
+    }
+  },
+  "demurrage_detention_fallback": {
+    "standard": {
+      "free_days": 5,
+      "per_diem_usd_per_teu": { "avg": 85, "min": 55, "max": 145, "std": 25 },
+      "risk_percent": { "avg": 8, "min": 3, "max": 18, "std": 4 },
+      "note": "8% of shipments incur demurrage. Expected cost = per_diem × avg_excess_days × risk_percent.",
+      "source": "ShippingRates.io industry data 2024",
+      "source_date": "2024-Q1",
+      "confidence": "medium"
+    }
+  }
+}
