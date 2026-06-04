@@ -24,6 +24,16 @@ DUTIFY_API_KEY = os.getenv("DUTIFY_API_KEY", "")
 DESCARTES_API_KEY = os.getenv("DESCARTES_API_KEY", "")
 WTO_API_KEY = os.getenv("WTO_API_KEY", "")  # WTO has optional auth for higher rate limits
 
+# CORS — comma-separated list of allowed origins
+ALLOWED_ORIGINS = [
+    o.strip()
+    for o in os.getenv(
+        "ALLOWED_ORIGINS",
+        "http://localhost:3000,http://127.0.0.1:3000",
+    ).split(",")
+    if o.strip()
+]
+
 # Cache TTLs (seconds)
 CACHE_TTL = {
     "freight_rates": 4 * 3600,       # 4 hours

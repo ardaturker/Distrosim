@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field
 
 from db.cache import init_db, cache_stats, cache_prune
 import aiosqlite
-from config import DB_PATH
+from config import DB_PATH, ALLOWED_ORIGINS
 from services.simulation import run_simulation
 from api.news import fetch_rotterdam_news, get_region_list
 from api.news_intelligence import extract_risk_signals, route_risk_summary as build_risk_summary
@@ -53,7 +53,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
