@@ -1,7 +1,11 @@
 {
-  "buildCommand": "npm --prefix frontend install && npm --prefix frontend run generate",
-  "outputDirectory": "frontend/.output/public",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "buildCommand": "npm --prefix frontend install && npm --prefix frontend run build",
+  "outputDirectory": "frontend/.vercel/output",
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend",
+      "routePrefix": "/",
+      "framework": "nuxtjs"
+    }
+  }
 }
